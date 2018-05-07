@@ -83,6 +83,10 @@ module.exports = {
       "required": false,
       "message": "Plugin version",
       "default": "dev"
+    },
+    "test": {
+      "value": false,
+      "message": "小程序测试，敬请关注最新微信开发者工具的“测试报告”功能"
     }
   },
   "filters": {
