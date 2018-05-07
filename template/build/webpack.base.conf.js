@@ -5,7 +5,9 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const MpvuePlugin = require('webpack-mpvue-asset-plugin')
+{{#plugin}}
 const MpvueExtraPlugin = require('webpack-mpvue-extra-plugin/miniprogram')
+{{/plugin}}
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -104,8 +106,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new MpvuePlugin(),
-    new MpvueExtraPlugin()
+    {{#plugin}}
+    new MpvueExtraPlugin(),
+    {{/plugin}}
+    new MpvuePlugin()
   ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue

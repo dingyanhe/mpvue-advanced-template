@@ -1,5 +1,0 @@
-{
-  "usingComponents": {
-    "greeting": "plugin://LancerPlugin/greeting"
-  }
-}

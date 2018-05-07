@@ -17,7 +17,7 @@ module.exports = {
     "appid": {
       "type": "string",
       "required": false,
-      "message": "wxmp appid",
+      "message": "Your miniprogram appid",
       "default": "touristappid"
     },
     "description": {
@@ -60,9 +60,29 @@ module.exports = {
         }
       ]
     },
-    "test": {
-      "value": false,
-      "message": "小程序测试，敬请关注最新微信开发者工具的“测试报告”功能"
+    "plugin": {
+      "type": "confirm",
+      "message": "Use native miniprogram plugin?"
+    },
+    "pluginName": {
+      "when": "plugin",
+      "type": "string",
+      "required": true,
+      "message": "Name of used plugin",
+    },
+    "pluginAppid": {
+      "when": "plugin",
+      "type": "string",
+      "required": false,
+      "message": "Plugin appid",
+      "default": "touristappid"
+    },
+    "pluginVersion": {
+      "when": "plugin",
+      "type": "string",
+      "required": false,
+      "message": "Plugin version",
+      "default": "dev"
     }
   },
   "filters": {
