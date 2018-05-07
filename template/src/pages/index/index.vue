@@ -9,28 +9,28 @@
 </template>
 
 <script>
-import card from '@/components/card'
+import card from '@/components/card'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 export default {
-  data () {
+  data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
     return {
-      motto: 'Hello World'
-    }
+      motto: 'Hello World'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   },
 
   components: {
-    card
+    card{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   },
 
   methods: {
-    clickHandle (msg, ev) {
-      console.log('clickHandle:', msg, ev)
-    }
+    clickHandle{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}(msg, ev) {
+      console.log('clickHandle:', msg, ev){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   },
 
-  created () {
-  }
-}
+  created{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
+  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
 <style scoped>

@@ -1,11 +1,13 @@
-import Vue from 'vue'
-import App from './App'
+// The Vue build version to load with the `import` command
+// mpvue has been set in webpack.base.conf with an alias.
+import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-Vue.config.productionTip = false
-App.mpType = 'app'
+Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+App.mpType = 'app'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-const app = new Vue(App)
-app.$mount()
+const app = new Vue(App){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+app.$mount(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 export default {
   // 这个字段走 app.json
@@ -16,7 +18,7 @@ export default {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
-  }
-}
+      navigationBarTextStyle: 'black'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}

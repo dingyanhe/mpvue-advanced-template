@@ -30,22 +30,6 @@ module.exports = {
       "type": "string",
       "message": "Author"
     },
-    "build": {
-      "type": "list",
-      "message": "Vue build",
-      "choices": [
-        // {
-        //   "name": "Runtime + Compiler: recommended for most users",
-        //   "value": "standalone",
-        //   "short": "standalone"
-        // },
-        {
-          "name": "Runtime-only: no custom render function, only can compile template in *.vue",
-          "value": "runtime",
-          "short": "runtime"
-        }
-      ]
-    },
     "vuex": {
       "type": "confirm",
       "message": "Use Vuex?"
