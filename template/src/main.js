@@ -22,8 +22,8 @@ export default {
     }{{#plugin}},
     plugins: {
       {{pluginName}}: {
-        version: {{pluginVersion}},
-        provider: {{pluginAppid}}
+        version: '{{pluginVersion}}',
+        provider: '{{pluginAppid}}'
       }
     }{{/plugin}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
