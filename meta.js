@@ -73,16 +73,14 @@ module.exports = {
     "pluginAppid": {
       "when": "plugin",
       "type": "string",
-      "required": false,
-      "message": "Plugin appid",
-      "default": "touristappid"
+      "required": true,
+      "message": "Plugin appid"
     },
     "pluginVersion": {
       "when": "plugin",
       "type": "string",
-      "required": false,
-      "message": "Plugin version",
-      "default": "dev"
+      "required": true,
+      "message": "Plugin version"
     },
     "test": {
       "value": false,
