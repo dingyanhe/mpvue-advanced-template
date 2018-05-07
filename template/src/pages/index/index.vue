@@ -2,7 +2,7 @@
   <div class="container" @click="clickHandle('test click', $event)">
     <div class="usermotto">
       <div class="user-motto">
-        <greeting/>
+        <card text="Greetings"></card>
       </div>
     </div>
   </div>
