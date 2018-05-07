@@ -1,5 +1,6 @@
 'use strict'
 const path = require('path')
+const glob = require('glob')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
@@ -21,11 +22,23 @@ function resolve (dir) {
   }
 }){{/lint}}
 
+function getEntry (rootSrc, pattern) {
+  var files = glob.sync(path.resolve(rootSrc, pattern))
+  return files.reduce((res, file) => {
+    var info = path.parse(file)
+    var key = info.dir.slice(rootSrc.length + 1) + '/' + info.name
+    res[key] = path.resolve(file)
+    return res
+  }, {})
+}
+
+const appEntry = { app: resolve('./src/main.js') }
+const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
+const entry = Object.assign({}, appEntry, pagesEntry)
+
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: {
-    app: './src/main.js'
-  },
+  entry,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
