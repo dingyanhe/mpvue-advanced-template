@@ -6,7 +6,6 @@ const merge = require('webpack-merge')
 const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WriteFilePlugin = require('write-file-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
@@ -23,7 +22,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       extract: true
     })
   },
-  // cheap-module-eval-source-map is faster for development
+  output: {
+    path: config.build.assetsRoot,
+    filename: utils.assetsPath('js/[name].js'),
+    chunkFilename: utils.assetsPath('js/[id].js')
+  },
   devtool: config.dev.devtool,
 
   // these devServer options should be customized in /config/index.js

@@ -39,6 +39,7 @@ const entry = Object.assign({}, appEntry, pagesEntry)
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry,
+  target: require('mpvue-webpack-target'),
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
