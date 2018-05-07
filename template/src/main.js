@@ -17,12 +17,6 @@ export default {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
-    },
-    plugins: {
-      LancerPlugin: {
-        version: 'dev',
-        provider: 'wx3ac05f5afaa56c7b'
-      }
     }
   }
 }
