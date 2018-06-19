@@ -49,7 +49,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
-    new CleanWebpackPlugin([miniprogramOutput], { allowExternal: true }),
+    new CleanWebpackPlugin([path.resolve('dist')], { allowExternal: true }),
     new WriteFilePlugin({
       force: true,
       useHashIndex: false
